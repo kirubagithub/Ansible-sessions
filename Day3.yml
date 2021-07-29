@@ -1,0 +1,23 @@
+---
+- name: Using Handlers
+  hosts: localhost
+  tasks:
+    - name: Create File
+      file:
+        path: "/root/created_from_ansible.txt"
+        state: touch
+      register: out
+      notify: print
+
+    - name: Append to last line
+      lineinfile:
+        path: "/root/created_from_ansible.txt"
+        line: "Last line111"
+      register: out
+      notify:
+        - print
+
+  handlers:
+    - name: print
+      debug:
+        msg: "{{ out }}"
