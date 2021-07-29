@@ -1,0 +1,8 @@
+---
+- name: Create users in loop
+  hosts: localhost
+  tasks:
+    - name: Create users
+      debug:
+        msg: "user{{item}}"
+      with_sequence: start=1 end=20
