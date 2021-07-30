@@ -1,9 +1,15 @@
 ---
 - name: Create users in loop
   hosts: localhost
+  vars:
+    users: [Kiruba, senthil, vedha]
   tasks:
-    - name: Create users
-      # no_log: true  
+    - name: Create users with sequence
       debug:
         msg: "user{{item}}"
       with_sequence: start=1 end=20
+
+    - name: Create users with defined list
+      debug:
+        msg: "{{item}}"
+      with_items: "{{users}}"
