@@ -11,7 +11,5 @@
 
     - name: Create users with defined list
       debug:
-        msg: "{{x_user}}"
+        msg: "{{item}}"
       with_items: "{{users}}"
-      loop_control:
-        loop_var: x_user
