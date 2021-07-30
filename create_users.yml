@@ -1,19 +1,12 @@
 ---
 - name: Create users in loop
   hosts: localhost
-  vars:
-    default_pass: "Ans@123"
   tasks:
-    # - name: Create users with sequence
-    #   user:
-    #     name : "user{{item}}"
-    #     groups: [students, operator]
-    #     shell: /bin/bash
-    #     password: "{{ 'user' + item + '@123' | password_hash('sha512') }}"
-    #     state: present
-    #   with_sequence: start=18 end=20
-
-    - name:
-      debug:
-        msg: "{{ 'user' + item}}"
+    - name: Create users with sequence
+      user:
+        name : "user{{item}}"
+        groups: [students, operator]
+        shell: /bin/bash
+        password: "{{ 'user' + item + '@123' | password_hash('sha512') }}"
+        state: present
       with_sequence: start=18 end=20
