@@ -7,6 +7,6 @@
         name : "user{{item}}"
         groups: [students, operator]
         shell: /bin/bash
-        password: "{{ 'user@123' | password_hash('sha512') }}"
+        password: "{{ item + '@123' | password_hash('sha512') }}"
         state: present
       with_sequence: start=18 end=20
