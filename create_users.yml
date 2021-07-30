@@ -7,8 +7,8 @@
         name : "user{{item}}"
         groups: [students, operator]
         shell: /bin/bash
-        password: "(user+{{item}}+@123) | password_hash('sha512')"
-        state: present
+        password: "(user+{{item}}+@123)" | password_hash('sha512')
+        state: absent
       with_sequence: start=18 end=20
       register: users
     - debug:
