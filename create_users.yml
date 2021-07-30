@@ -6,10 +6,12 @@
   tasks:
     - name: Create users with sequence
       debug:
-        msg: "user"
+        msg: "user{{item}}"
       with_sequence: start=1 end=20
 
     - name: Create users with defined list
       debug:
-        msg: "{{item}}"
+        msg: "{{uservar}}"
       with_items: "{{users}}"
+      loop_control:
+        loop_var: uservar
