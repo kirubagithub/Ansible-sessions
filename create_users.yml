@@ -7,7 +7,7 @@
     - name: Create users with sequence
       user:
         name : "user{{item}}"
-        groups: [students, wheel, operator]
+        groups: [students, operator]
         shell: /bin/bash
         password: "{{ default_pass | password_hash('sha512') }}"
         state: present
