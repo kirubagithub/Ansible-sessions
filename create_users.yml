@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
     - name: Create users
-      no_log: true
+      # no_log: true
       debug:
         msg: "user{{item}}"
       with_sequence: start=1 end=20
