@@ -7,7 +7,7 @@
         name : "user{{item}}"
         groups: [students, operator]
         shell: /bin/bash
-        password: "user{{item}}@123"
+        password: "user{{item}}123"
         state: present
       with_sequence: start=18 end=20
       register: users
