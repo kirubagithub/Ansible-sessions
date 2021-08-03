@@ -1,0 +1,4 @@
+---
+- name: Tree Install
+  apt:
+    name: tree

@@ -1,0 +1,12 @@
+---
+- name: Role calling Playbook
+  hosts: localhost
+  tasks:
+    - name: Python Install
+      include_role:
+        name: python-installer
+
+    - name: Tree Install
+      include_role:
+        name: python-installer
+        tasks_from: apt-tree.yml
