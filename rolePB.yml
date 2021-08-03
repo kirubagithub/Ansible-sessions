@@ -2,16 +2,7 @@
 - name: Role calling Playbook
   hosts: localhost
   tasks:
-    - name: calling Role A Installer
-      block:
-        - include_role:
-            name: roleA
-          tags: installer
-      tags: role_installer
-
-    - name: calling Role A Maven
-      block:
-        - include_role:
-            name: roleA
-          tags: maven
-      tags: role_maven
+    - name: calling Role A
+      include_role:
+        name: roleA
+      tags: installer
