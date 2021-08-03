@@ -1,0 +1,13 @@
+---
+- name: Sub task 0
+  set_fact:
+    download_location: /root/Kiruba/downloads
+- name: Sub task 1
+  file:
+    path: "{{download_location}}"
+    state: directory
+- name: Sub task 2
+  get_url:
+    url: http://apache.mirror.digitalpacific.com.au/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+    dest: "{{download_location}}"
+    mode: '755'

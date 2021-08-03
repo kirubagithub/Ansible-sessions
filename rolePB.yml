@@ -5,3 +5,11 @@
     - name: calling Role A
       include_role:
         name: roleA
+        tasks_from: apt.yml
+      tags: installer
+
+    - name: calling Role A
+      include_role:
+        name: roleA
+        tasks_from: maven.yml
+      tags: maven

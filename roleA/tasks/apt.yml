@@ -1,0 +1,11 @@
+---
+- name: Install Python
+  apt:
+    name: "{{item}}"
+  with_items:
+    - python3
+    - tree
+  register: apt_out
+
+- debug:
+    msg: "{{apt_out}}"
