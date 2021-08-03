@@ -2,6 +2,6 @@
 - name: Role calling Playbook
   hosts: localhost
   tasks:
-    - name: Python Install
+    - name: calling Role A
       include_role:
-        name: python-installer
+        name: roleA
