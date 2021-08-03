@@ -10,9 +10,8 @@
     dest: /root/crons/cpu_mem.sh
     mode: '755'
 
-- name: Task 2 - Create Cron Job
+- name: Task 2 - Create Cron Job to run for every 10 Mins
   cron:
     name: "kiruba_cron"
     minute: "*/10"
     job: "sh /root/crons/cpu_mem.sh >> /root/crons/cpu_mem.log"
-    state: absent
