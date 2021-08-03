@@ -4,7 +4,14 @@
     path: /root/crons
     state: directory
 
-- name: Task 1 - Create File in Directory
+- name: Task 1 - Create File in Directory with Permission
   template:
     src: cpu_mem.sh.j2
     dest: /root/crons/cpu_mem.sh
+    mode: '755'
+
+- name: Task 2 - Create Cron Job
+  cron:
+    name: "kiruba_cron"
+    minute: "*/1"
+    job: "sh /root/crons/cpu_mem.sh >> /root/crons/cpu_mem.log"
