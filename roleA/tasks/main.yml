@@ -25,4 +25,4 @@
         url: http://apache.mirror.digitalpacific.com.au/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
         dest: "{{download_location}}"
         mode: '755'
-   tags: maven
+  tags: maven
