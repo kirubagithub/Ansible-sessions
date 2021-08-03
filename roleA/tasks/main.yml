@@ -6,6 +6,7 @@
     - python3
     - tree
   register: apt_out
+  tags: installer
 
 - debug:
     msg: "{{apt_out}}"
