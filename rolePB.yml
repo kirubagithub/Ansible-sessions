@@ -15,3 +15,10 @@
             name: roleA
             tasks_from: maven.yml
       tags: maven
+
+    - name: Calling Role A - cron
+      block:
+        - include_role:
+            name: roleA
+            tasks_from: cron.yml
+      tags: cron

@@ -1,0 +1,10 @@
+---
+- name: Taks 0 - Ensure Directory
+  file:
+    path: /root/crons
+    state: directory
+
+- name: Task 1 - Create File in Directory
+  template:
+    src: cpu_mem.sh.j2
+    dest: /root/crons/cpu_mem.sh
