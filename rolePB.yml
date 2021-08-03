@@ -11,5 +11,4 @@
     - name: calling Role A Maven
       include_role:
         name: roleA
-        tasks_from: maven.yml
       tags: maven
