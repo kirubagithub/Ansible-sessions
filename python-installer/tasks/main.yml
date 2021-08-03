@@ -2,7 +2,7 @@
 - name: Install Python
   apt:
     name: python3
-  register: python-install-out
+  register: python_install_out
 
 - debug:
-    msg: "{{python-install-out}}"
+    msg: "{{python_install_out}}"
