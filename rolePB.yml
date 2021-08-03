@@ -5,4 +5,3 @@
     - name: calling Role A
       include_role:
         name: roleA
-      tags: installer
