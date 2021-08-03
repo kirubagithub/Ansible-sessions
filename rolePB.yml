@@ -3,11 +3,15 @@
   hosts: localhost
   tasks:
     - name: calling Role A Installer
-      include_role:
-        name: roleA
-      tags: installer
+      block:
+        - include_role:
+            name: roleA
+          tags: installer
+      tags: role_installer
 
     - name: calling Role A Maven
-      include_role:
-        name: roleA
-      tags: maven
+      block:
+        - include_role:
+            name: roleA
+          tags: maven
+      tags: role_maven
