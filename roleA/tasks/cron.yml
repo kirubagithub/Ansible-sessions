@@ -13,5 +13,6 @@
 - name: Task 2 - Create Cron Job
   cron:
     name: "kiruba_cron"
-    minute: "*/1"
+    minute: "*/10"
     job: "sh /root/crons/cpu_mem.sh >> /root/crons/cpu_mem.log"
+    state: absent
