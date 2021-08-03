@@ -2,13 +2,13 @@
 - name: Role calling Playbook
   hosts: localhost
   tasks:
-    - name: calling Role A
+    - name: calling Role A Installer
       include_role:
         name: roleA
         tasks_from: apt.yml
       tags: installer
 
-    - name: calling Role A
+    - name: calling Role A Maven
       include_role:
         name: roleA
         tasks_from: maven.yml
